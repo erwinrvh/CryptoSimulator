@@ -36,3 +36,5 @@ If your branch name doesn't relate/changes definition as you go, just make sure 
 
 Before commiting, double check files. Depending on OS, it will make a file that shouldn't be pushed. Utilize AI to doublecheck on how to add it to the .gitignore file. Also make sure to save the file before commiting and pushing.
 
+When the branch is merged, delete the branch as well on github via your pull request.
+
