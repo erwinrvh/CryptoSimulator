@@ -32,3 +32,7 @@ When your branch has been merged, make sure to move from your local branch into 
 - `git fetch` then `git pull`
 - Upon success, delete your local branch via `git branch -d <branchname>`
 
+If your branch name doesn't relate/changes definition as you go, just make sure to summarize what you did in the commit message.
+
+Before commiting, double check files. Depending on OS, it will make a file that shouldn't be pushed. Utilize AI to doublecheck on how to add it to the .gitignore file. Also make sure to save the file before commiting and pushing.
+
