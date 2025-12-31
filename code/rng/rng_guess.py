@@ -1,9 +1,12 @@
-# Rename file later on
-
 import random, time
 
-def generate_random_number(start, end, delay, log_callback=None):
+def run(log_callback, **kwargs):
     """Generate a random number between start and end (inclusive)."""
+
+    # Extract parameters from kwargs or use defaults
+    start = kwargs.get("start", 1)
+    end = kwargs.get("end", 100)
+    delay = kwargs.get("delay", 0.1)
 
     numberToFind = random.randint(start, end)
     attempts = 0

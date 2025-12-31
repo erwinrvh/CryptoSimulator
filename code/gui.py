@@ -2,7 +2,15 @@
 import tkinter as tk
 from tkinter import scrolledtext
 import threading
-import rngFunctions
+import random
+
+from rng import rng_coinflip, rng_guess
+
+# RNG module list/dictionary
+RNG_MODULES = {
+    "Coin Flip": rng_coinflip,
+    "Number Guess": rng_guess,
+}
 
 def start_gui():
     app = tk.Tk()
@@ -19,7 +27,13 @@ def start_gui():
     def mine_task():
         # This prints to the TERMINAL
         # You can redirect it later into the GUI if you want.
-        rngFunctions.generate_random_number(1, 100, 0.1, log_callback=write_log)
+        # Randomly pick RNG module from dictionary
+        name, rng = random.choice(list(RNG_MODULES.items()))
+        write_log(f"Starting mining with {name} RNG module...\n")
+        
+        rng.run(write_log)
+
+        write_log(f"{name} RNG module finished mining.\n")
 
         # Optional: append final result to GUI log
         log.insert(tk.END, "Mining finished!\n")
